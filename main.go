@@ -12,6 +12,7 @@ func handlerFunc(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
 		_, _ = fmt.Fprint(w, "This blog is used to record programming notes, if you have feedback or suggestions, please contact "+"<a href=\"mailto:3267666759@qq.com\">9yen</a>")
 	} else {
+		w.WriteHeader(http.StatusNotFound)
 		_, _ = fmt.Fprint(w, "<h1>404 NOT FOUNT :(</h1>")
 	}
 }
