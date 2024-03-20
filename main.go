@@ -1,6 +1,7 @@
 package main
 
 import (
+	"goblog/app/cmd"
 	"goblog/bootstrap"
 	btsConig "goblog/config"
 	"goblog/pkg/config"
@@ -15,4 +16,5 @@ func main() {
 	bootstrap.SetupLogger()
 	bootstrap.SetupDB()
 	bootstrap.SetupRedis()
+	cmd.RunWeb()
 }
